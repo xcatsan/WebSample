@@ -186,7 +186,7 @@ See the COPYING file for details.
 
 .goog-custom-button-hover .goog-custom-button-outer-box,
 .goog-custom-button-hover .goog-custom-button-inner-box {
-  border-color: #9cf #69e #69e #7af !important; /* Hover border wins. */
+  border-color: #666 #666 #666 #666 !important; /* Hover border wins. */
 }
 
 .goog-custom-button-active,
@@ -197,7 +197,7 @@ See the COPYING file for details.
 
 .goog-custom-button-focused .goog-custom-button-outer-box,
 .goog-custom-button-focused .goog-custom-button-inner-box {
-  border-color: orange;
+  border-color: #ccc;
 }
 
 /* Pill (collapsed border) styles. */
