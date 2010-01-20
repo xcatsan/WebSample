@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://closure-library.googlecode.com/svn/trunk/closure/goog/base.js"></script>
+    <script>
+      goog.require('goog.ui.CustomButton');
+      goog.require('goog.ui.decorate');
+    </script>
+
+    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="/css/button.css">
+  </head>
+	<body>
+		<h1>Closure Libraray: button sample</h1>
+		<hr/>
+
+		<h2>(1) goog.ui.Button</h2>
+		<div id="button1"></div>
+		<script>
+			var btn1 = new goog.ui.CustomButton('BUTTON-1');
+			btn1.render(goog.dom.$('button1'));
+			goog.events.listen(btn1, goog.ui.Component.EventType.ACTION,
+				function(e) {
+					var target = e.target;
+					alert('button1: ' + target);
+				});
+		</script>
+
+		<h2>(2) goog.ui.decorate</h2>
+		<div id="button2" class="goog-custom-button">
+			<span style="color: blue">BUTTON-<b>2</b></span>
+		</div>
+
+		<div id="button3" class="goog-custom-button">
+			<span style="font-size: 7pt">BUTTON-<b>3</b></span>
+
+		</div>
+		<script>
+			var btn2 = goog.ui.decorate(goog.dom.$('button2'));
+			goog.events.listen(btn2, goog.ui.Component.EventType.ACTION,
+				function(e) {
+					var target = e.target;
+					alert('button2: ' + target);
+				});
+			var btn3 = goog.ui.decorate(goog.dom.$('button3'));
+		</script>
+
+
+	</body>
+</html>
+
