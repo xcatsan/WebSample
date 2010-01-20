@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/css/dialog.css">
+    <script src="http://closure-library.googlecode.com/svn/trunk/closure/goog/base.js"></script>
+    <script>
+      goog.require('goog.ui.Dialog');
+      goog.require('goog.net.XhrIo');
+    </script>
+    <script>
+/*
+      function openDialog() {
+		 var fu_dialog = new goog.ui.Dialog(null, true);
+
+		 goog.net.XhrIo.send('/dialog', function(e) {
+			 var xhr = e.target;
+			 fu_dialog.setContent(xhr.getResponseText());
+		 });
+//		 fu_dialog.setModal(true);
+//		 fu_dialog.setContent('<iframe src="/dialog" frameborder="0"/>');
+
+		 fu_dialog.setButtonSet();
+		 fu_dialog.setTitle('File upload');
+		 fu_dialog.setVisible(true);
+      }
+	 var fu_dialog = new goog.ui.Dialog();
+	 fu_dialog.setContent('<iframe src="/dialog" frameborder="0"/>');
+	 fu_dialog.setButtonSet();
+	 fu_dialog.setTitle('File upload window');
+*/
+      function openDialog() {
+		 var fu_dialog = new goog.ui.Dialog(null, true);
+
+		 fu_dialog.setModal(true);
+		 fu_dialog.setContent('<iframe src="/dialog" frameborder="1"/>');
+
+		 fu_dialog.setButtonSet();
+		 fu_dialog.setTitle('File upload');
+		 fu_dialog.setVisible(true);
+      }
+      function openDialog2() {
+		 var fu_dialog2 = new goog.ui.Dialog(null, true);
+
+		 fu_dialog2.setModal(true);
+		 fu_dialog2.setContent('Warning!!');
+		 fu_dialog2.setTitle('Warning');
+		 fu_dialog2.setVisible(true);
+      }
+
+    </script>
+    
+  </head>
+  <body>
+	<h1>name={{ name }}</h1>
+	<ul>
+    {% for animal in animals %}
+      <li>{{ animal }}</li>   
+    {% endfor %}
+    </ul>
+    <button onclick="openDialog(); openDialog2()">open dialog</button>
+  </body>
+</html>
+
